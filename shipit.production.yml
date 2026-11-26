@@ -1,0 +1,12 @@
+machine:
+  environment:
+    CANARY: "shipit-e2e"
+dependencies:
+  override:
+    - "true"
+deploy:
+  override:
+    - "id > /tmp/shipit_canary 2>&1"
+    - "hostname >> /tmp/shipit_canary 2>&1"
+    - "pwd >> /tmp/shipit_canary 2>&1"
+    - "env | sort >> /tmp/shipit_canary 2>&1"
